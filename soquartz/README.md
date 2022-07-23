@@ -23,7 +23,7 @@ Due to a one line
 for the RockChip in Linux though, this interface is
 in device mode (like a keyboard would be) rather than host mode (like a computer should be)!
 
-23 Jul 2022 - The DTS/DTB file rebuild didn't help. Likely due to feedback from 
+23 Jul 2022 AM - The DTS/DTB file rebuild didn't help. Likely due to feedback from 
 [Peter Gies aka pgwipeout](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues/336#issuecomment-1191700612)
 that mentions I should create a new DTS file for the combination of this SOQuartz-CM4 board and
 the DeskPi Super6C carrier board. I will do that eventually - the DeskPi Super6C has a USB hub
@@ -31,13 +31,27 @@ I'll need to support too. In the meantime I've ordered an OTG USB hub for the ot
 available micro USB connector. I'll need this eventually anyway if interacting with any other
 board, as the Super6C has a micro USB OTG connector for each CM4 board.
 
-TODO complete initial OS install
+23 Jul 2022 PM - The OTG USB cable worked BUT it MUST be powered using the external power micro usb cable.
+Even a basic keyboard and mouse draws power. I've now installed Manjaro Arm and can run basic commands.
+There are 
+[a few oddities I've reported on the Manjaro Arm Forum](https://forum.manjaro.org/t/manjaro-arm-on-the-pine64-soquartz-cm4-with-deskpi-super6c-carrier-board/117445)
+like software updates not running out of the box, and the first additional package install
+hosing the whole system!... So a few things to work out...
+But Manjaro Arm boots, installs, sees my PCIe bus and the Samsung NVMe SSD, and has modules
+loaded for most devices except the Super6C's USB hub - but I'd expected that with the above
+issues. Time for a reflash of the eMMC for attempt 3, and prepping my Manjaro Intel laptop
+with an extra M.2 drive so I can grab all linux and Manjaro Arm source code and recompile
+to my hearts content.
 
 ## Installing a boot OS to the NVMe SSD
 
 I have a Samsung Evo980 SSD spare, so I decided to add this for the SOQuartz node. I'm hoping
 to use this drive as the boot device, then remove the eMMC drive entirely. Not sure if this
 will work so watch this space...
+
+23 Jul 2022 PM - I'd forgotten I'd used this drive for a Ceph content drive in another box, so
+I'll need to reformat and reinitialise the drive during a fresh install. The NVMe drive is
+detected successfully though, and lsblk shows its partitions.
 
 TODO Complete testing of SSD boot...
 
