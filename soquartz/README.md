@@ -53,9 +53,51 @@ will work so watch this space...
 I'll need to reformat and reinitialise the drive during a fresh install. The NVMe drive is
 detected successfully though, and lsblk shows its partitions.
 
-TODO Complete testing of SSD boot...
+31 Jul 2022 - Researched how to boot from NVMe. Flashed the latest Manjaro Arm (25 July) to
+the eMMC drive but for some reason it's not even booting now. I've plugged in a new empty
+NVMe drive, also a new basic USB keyboard, and a new OS version. My fault for changing more
+than one thing at a time I guess... 
+
+Changing keyboard had no effect (no surprise!), removing
+the NVMe drive had no effect, Reseated the soquartz board and eMMC had no effect. Flashed
+the old 18th July Manjaro Arm to the eMMC and ... It worked again. Clearly the 25 Jul 2022
+build is broken. I've reported that 
+[on the Manjaro Arm forum](https://forum.manjaro.org/t/manjaro-arm-on-the-pine64-soquartz-cm4-with-deskpi-super6c-carrier-board/117445/5?u=adamfowleruk)
+too.
+
+I've confirmed that the U-Boot bootloader used by Manjaro Arm does not yet support the
+PCIe driver for the RockChip and instead uses a generic PCIe driver. This means U-Boot
+currently only supports booting from the SD Card, eMMC, or NetBoot (Ethernet). So I've
+found an old SD Card kicking around and have flashed the boot drive to that. Similarly,
+I've flashed the Manjaro image to the NVMe SSD. Interestingly, this uses the same
+ROOTUUID and so will boot from the eMMC card but use the NVMe's root (i.e. / ) mount point.
+
+When booting from the SD card though it doesn't even recognise the NVMe drive as a device.
+There's a dmesg error there. Perhaps it didn't shut down properly or something...
+
+But I've got a couple hundred MB of wasted space on the NVMe, but I can boot using the eMMC
+card for bootloader only, and the NVMe drive for the system drive. So that's the basics working.
+
+I've ordered a USB NVMe adapter so I can flash the other NVMe drives outside of the Super6C rig.
+Hopefully I'll be able to use this new information to automate the provisioning of NVMe
+drives for these rigs.
+
+TODO Repair NVMe partition. Boot from SD card to NVMe drive for root partition instead of eMMC.
 
 ## Creating a dedicated DTS file for the SOQuartz-CM4 and DeskPi-Super6C combination
 
-TODO create the new DTS and customise for the DeskPi super6C hardware, test, contribute back
-to the Linux kernel and let the Manjaro ARM team know.
+31 Jul 2022 - I've started to look at this and have duplicated the soquartz-cm4 dts as the basis.
+I've also found in dmesg a bunch of interesting messages about devices seen but not loaded,
+and attempted to load but failed. Not much and the system seems to be generally the same.
+The DeskPi's Super6C's USB Hub is correctly and dynamically discovered, so the two DTS are
+the same right now. As soon as I find a piece of hardware configured differently though I'll
+modify the DTS file. I suspect the calendar chip will be one area of difference, as will an
+as yet unidentified Maxim chip, which I suspect is a Serial I/O controller on the DeskPi
+Super6c.
+
+05 Aug 2022 - I've created a DTS file and made some changes. In addition to enabling the
+USB2 OTG connector as pgwipeout has done in his DTS, I've also enabled the USB2 Host
+support on the same USB2 PHY, and enabled the usb_host1_xhci support. I'm recompiling
+the linux Kernel now for Manjaro and will post the DTS file, PKGBUILD, and any patches
+on this repo once done, along with a custom build guide (which is severely lacking,
+by the way, for people trying to add new carrier boards to Arm).

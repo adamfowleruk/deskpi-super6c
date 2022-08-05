@@ -25,9 +25,18 @@ to external sites on this repository.
 - [Ceph on Arm](ceph/README.md) - Can I do both K8S and Ceph, so I have a general shared storage service which can also be exposed to K8S for persistent volumes?
 - Bang for my buck - Can I expose the SOQuartz's Neural Processing Unit (NPU) and GPU to Linux to speed Machine Learning operations?
 
+## Why not the Raspberry Pi?
+
+They're like Rocking Horse Poop - super rare! I like the Pine64 hardware as I already have a
+PinePhone and PinePhone Pro, so I know there are people working on the Manjaro Arm support
+and Linux Kernel DTS files and drivers and I want to leverage their work. So I'm using the
+[Pine64 SOQuartz CM4-compatible module](soquartz/README.md) for that.
+
 ## License and Copyright
 
 Any documentation in this repository is distributed under the Creative Common's ShareAlike licenses v4.
-All code samples are distributed under the Apache-2.0 license.
+All code samples are distributed under the Apache-2.0 license, unless otherwise stated.
+Linux kernel code subfolders are likely GPL2 or MIT licensed - read individual files for confirmation.
+
 Copyright Adam Fowler 2022, all rights reserved.
 See individual files for specific copyright statements.
