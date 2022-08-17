@@ -18,6 +18,7 @@ Potential features I want to explore are:-
 - Using Linux on the SOQuartz nodes to 'hide' the main eth0 interface, but allow use of VLAN virtual
 Ethernet interfaces to be used by specific users/groups/processes
 - Restricting egress traffic on certain VLAN interfaces from leaving the DeskPi Super6C board's network
+- Alternatively, using both LAN uplinks with Link Aggregation, as [mentioned by Jeff in his Super6C video](https://www.youtube.com/watch?v=ecdm3oA-QdQ&t=606s)
 - Setting up a Ceph cluster on the same nodes as the K8S cluster, and prioritising storage VLAN traffic
 
 ## Further reading
