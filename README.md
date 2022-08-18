@@ -33,6 +33,7 @@ to external sites on this repository.
 - Kubernetes on Arm - Can I get microk8s or similar installed on one or more nodes? (Tanzu K8s on Arm later!)
 - [Ceph on Arm](ceph/README.md) - Can I do both K8S and Ceph, so I have a general shared storage service which can also be exposed to K8S for persistent volumes?
 - Bang for my buck - Can I expose the SOQuartz's Neural Processing Unit (NPU) and GPU to Linux to speed Machine Learning operations?
+- Create a [VMware ESXi Cluster](esxi/README.md) - Using the [VMware ESXi on Arm fling](https://flings.vmware.com/esxi-arm-edition)
 
 ## Why not the Raspberry Pi?
 
