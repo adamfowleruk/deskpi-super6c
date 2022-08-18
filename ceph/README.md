@@ -17,3 +17,8 @@ cluster.
 - See if a 3 node Ceph cluster and a 3 node k8s cluster performs better or worse
 - Prioritising shared storage traffic - [See the RTL8370N README too](../rtl8370n/README.md)
 - Act as a camera transcoding endpoint (k8s service) saving video files to storage (Ceph)
+
+## Further information
+
+- [Ceph project website](https://ceph.com/en/discover/)
+- [Jeff Geerling's own overview video](https://www.youtube.com/watch?v=ecdm3oA-QdQ) from 17 Aug 2022 where he created a Ceph cluster

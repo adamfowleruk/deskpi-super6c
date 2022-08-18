@@ -9,16 +9,25 @@ the Super6C board a very interesting cluster computing and edge computing board.
 
 ![DeskPi Super6C with the SOQuartz board running Manjaro Arm](images/deskpi-super6c-soquartz-manjaro-arm.jpg)
 
+## The DeskPi Super6C and SOQuartz modules on my YouTube channel!
+
+- 08 Aug 2022 - [Video introduction to the DeskPi Super6C](https://www.youtube.com/watch?v=bmKIHtm4J2g)
+
+I also have a play list for [all things Edge Computing related](https://www.youtube.com/playlist?list=PLWoOSZbmib_cMuz7R1x2r6BmllxyFj-Ne)!
+
+## Further board information
+
 Details on this board can be found here:-
-- Manufacturer website - https://deskpi.com/collections/deskpi-super6c/products/deskpi-super6c-raspberry-pi-cm4-cluster-mini-itx-board-6-rpi-cm4-supported
-- Geerling Guy's GitHub Issue - https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues/336
+- [Manufacturer website](https://deskpi.com/collections/deskpi-super6c/products/deskpi-super6c-raspberry-pi-cm4-cluster-mini-itx-board-6-rpi-cm4-supported)
+- Geerling Guy's [GitHub Issue](https://github.com/geerlingguy/raspberry-pi-pcie-devices/issues/336)
+- [Jeff Geerling's own overview video](https://www.youtube.com/watch?v=ecdm3oA-QdQ) from 17 Aug 2022 where he created a [Ceph cluster](ceph/README.md)
 
 I aim to explore this very interesting board and document my findings, ideas, code and links
 to external sites on this repository.
 
 ## Project ideas
 
-- [Initial node #1 OS installation](soquartz/README.md) and configuration using Manjaro Arm and a Pine64 SOQuartz board and a spare Samsung NVMe SSD
+- [Initial OS with a custom kernel](soquartz/README.md) and configuration using Manjaro Arm and a Pine64 SOQuartz board and a spare Samsung NVMe SSD
 - SSD partitioning - Can I install the OS and boot from the SSD, and use another partition for shared storage? (E.g. for a future Ceph cluster)
 - [Realtek RTL8370N chip](rtl8370n/README.md) - Can I segment the network between nodes for 'physical' VLAN separation? Can I prioritise storage VLAN traffic?
 - Kubernetes on Arm - Can I get microk8s or similar installed on one or more nodes? (Tanzu K8s on Arm later!)

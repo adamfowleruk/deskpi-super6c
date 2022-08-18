@@ -1,0 +1,21 @@
+## Maintained by Strit ##
+
+# Kernel and bootloader stuff
+#linux - we're adding our own
+#linux-quartz64 - SOQuartz used to need a fork of linux with specific patches - not any longer!
+uboot-soquartz-cm4
+plymouth
+plymouth-theme-manjaro
+
+# Video drivers
+
+# Other device specific packages
+crda
+btrfs-progs
+f2fs-tools
+ap6256-firmware
+wpa_supplicant
+usbutils
+i2c-tools
+generic-post-install
+quartz64-post-install

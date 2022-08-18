@@ -6,6 +6,10 @@ alternatives and found this Pine64 board. I have a PinePhone and PinePhone Pro
 already so fealt comfortable ordering this board to try it out with the
 DeskPi Super6C.
 
+## Quick Links
+
+- [Building a custom Manjaro Arm image for the soquartz on the super6c](./image-build-manjaro.md)
+
 ## Initial set up
 
 Since July 2022 Manjaro Arm has shipped it's arm64 LiveCD image with built in support
@@ -101,3 +105,7 @@ support on the same USB2 PHY, and enabled the usb_host1_xhci support. I'm recomp
 the linux Kernel now for Manjaro and will post the DTS file, PKGBUILD, and any patches
 on this repo once done, along with a custom build guide (which is severely lacking,
 by the way, for people trying to add new carrier boards to Arm).
+
+18 Aug 2022 - The DTS file has been created and I've managed to build and flash a 
+[custom Manjaro Arm image](./image-build-manjaro.md). It doesn't boot yet, but it's
+solid progress. My files are shared in the above link.
