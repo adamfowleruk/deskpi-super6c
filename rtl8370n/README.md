@@ -23,12 +23,12 @@ Ethernet interfaces to be used by specific users/groups/processes
 
 ## Investigation
 
-17 Aug 2022 - Tried to find more information on the RTL8370N and it's 8051 chip. Found a (Chinese, translated) GitHUb reference 
+17 Aug 2022 - Tried to find more information on the RTL8370N and its 8051 chip. Found a (Chinese, translated) GitHub reference 
 [for the chip](https://github-com.translate.goog/libc0607/Realtek_switch_hacking/blob/master/RTL8370N-Demo.md?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
  and 
 [for a rom burner](https://github-com.translate.goog/libc0607/Yakigani?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp)
 
-It certainly looks like the 8370N does support VLANs and has the same register layout as the 8367 which is supported by linux. Interestingly, the
+It certainly looks like the 8370N does support VLANs and has the same register layout as the 8367N which is supported by linux. Interestingly, the
 linux device driver information in my Manjaro Arm boot for board #1 does mention an 8051 chip. I wonder if it has an I2C / SPI connection
 in the DeskPi Super6C to the RTL8370N Chip? If so it's possible the first board could use this to change EEPROM settings and restart the Realtek
 RTL8370N chip. The 8370(M) DataSheet - which is for the 8370 and 8370M - mentions that both support Link Aggregation (the TRUNK hash map registers)
