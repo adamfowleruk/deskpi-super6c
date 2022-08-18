@@ -27,6 +27,7 @@ to external sites on this repository.
 
 ## Project ideas
 
+- Investigate the [DeskPi Super6C hardware](carrier-board/README.md) and expose it's devices and see how far I can push the carrier board itself
 - [Initial OS with a custom kernel](soquartz/README.md) and configuration using Manjaro Arm and a Pine64 SOQuartz board and a spare Samsung NVMe SSD
 - SSD partitioning - Can I install the OS and boot from the SSD, and use another partition for shared storage? (E.g. for a future Ceph cluster)
 - [Realtek RTL8370N chip](rtl8370n/README.md) - Can I segment the network between nodes for 'physical' VLAN separation? Can I prioritise storage VLAN traffic?

@@ -33,7 +33,10 @@ that comes configured OOTB. I've devised a DTS file for this, a copy
 of which is in this repo for convenience until it's working and
 contributed back to the Linux Kernel repo.
 
-18 Aug 2022 - I've rebuilt the Manjaro Arm image with USB support built in. Not quite fully working (wont boot!) but I now have a way to [build and test my DTS file](../soquartz/image-build-manjaro.md) at least to enable future testing.
+18 Aug 2022 - I've rebuilt the Manjaro Arm image with USB support built in. 
+Not quite fully working (wont boot!) but I now have a way to 
+[build and test my DTS file](../soquartz/image-build-manjaro.md) at least 
+to enable future testing.
 
 ## Further information
 
