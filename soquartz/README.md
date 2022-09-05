@@ -109,3 +109,22 @@ by the way, for people trying to add new carrier boards to Arm).
 18 Aug 2022 - The DTS file has been created and I've managed to build and flash a 
 [custom Manjaro Arm image](./image-build-manjaro.md). It doesn't boot yet, but it's
 solid progress. My files are shared in the above link.
+
+01 Sep 2022 - Got hold of a Raspberry Pi CM4 Lite with 1 GB RAM from a friend. They're
+super rare. Tried to boot vanilla PiOS 64 bite lite, 32 bit lite, and legacy (32 bit)
+lite and nothing works. See the below image:-
+
+![Super6C failing to boot RPi CM4 lite 1GB](../images/rpi-cm4-lite-no-boot.jpg)
+
+This looks like an rpiboot firmware issue - it's not even finding the SD card slot - 
+so I've ordered an official Raspberry Pi CM4 IO board to test this against. That way
+I have something with good serial debug capability to use for both boards. I'll then
+update the RPi firmware and boot on the CM4 IO board. Once that's working, I'll 
+transfer back to the Super6C carrier board. I know this works thanks to 
+[Jeff Geerling's work](https://github.com/geerlingguy/deskpi-super6c-cluster)
+
+Once I have that RPi lite board booting I'll work on getting a build of PiOS working with
+my custom DTS file. Once a known good set up, I'll transfer to the SOQuartz and
+generate a Manjaro Arm build and hopefully boot a fully working SOQuartz + Super6C
+combination.
+
